@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-// import grad from '../../assets/grad.jpeg'
+import theme_pattern from '../../assets/theme_pattern.svg'
 import profile_img from '../../assets/profile-img.png'
 
 
@@ -9,14 +9,14 @@ const About = () => {
     <div className='about'>
         <div className="about-title">
             <h1>About me</h1>
-            {/* <img src={grad} alt="" /> */}
+            <img src={theme_pattern} alt="" />
         </div>
         <div className="about-sections">
             <div className="about-left">
                 <img src={profile_img} alt="" />
             </div>
             <div className="about-right">
-                <div className="about-right">
+                <div className="about-para">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.possimus optio.</p>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. </p>
                 </div>
@@ -39,7 +39,7 @@ const About = () => {
             <h1>90+</h1>
             <p>Project Completed</p>
         </div>
-        <hr />
+        <hr/>
         <div className="about-achievement">
             <h1>15+</h1>
             <p>Happy client</p>

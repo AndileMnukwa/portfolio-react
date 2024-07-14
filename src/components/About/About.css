@@ -29,7 +29,7 @@
     flex-direction: column;
     gap: 80px;
 }
-.about-right{
+.about-para{
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -76,7 +76,7 @@
 .about-achievement h1{
     font-size: 60px;
     font-weight: 700;
-    background: linear-gradient(270deg, #DF8908 50.41%, #B415EE 90.25);
+    background: linear-gradient(270deg, #DF8908 50.41%, #B415EE 90.25%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
