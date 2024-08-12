@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="footer-top">
         <div className="footer-top-left">
             <img src={logo} alt="" />
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates natus iusto, fugit, totam eos eveniet et quisquam accusantium quas in cum minima necessitatibus culpa! Officia aspernatur libero atque minima nobis.</p>
+            <p>Stay updated with my latest projects and insights. Subscribe below!</p>
         </div>
         <div className="footer-top-right">
             <div className="footer-email-input">
@@ -21,7 +21,7 @@ const Footer = () => {
       </div>
      <hr />
      <div className="footer-bottom">
-        <p className=''>@ 2024 Andile Mnukwa. All right reserved.</p>
+        <p className=''>© 2024 Andile Mnukwa. All right reserved.</p>
         <div className="footer-bottom-right">
           <p>Teams of Services</p>
           <p>Privacy Policy</p>

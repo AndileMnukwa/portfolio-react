@@ -40,10 +40,11 @@ const Contact = () => {
         <div className="contact-section">
             <div className="contact-left">
                 <h1>Lets talk</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <p>Got a question, project idea, or just want to say hello? Fill out the form below, and I'll get back to you as soon as possible!
+                </p>
                 <div className="contact-details">
                     <div className="contact-detail">
-                        <img src={mail_icon} alt="" /><p>mnukwa1996@gmail.com</p>
+                        <img src={mail_icon} alt="" /><p>mnukwa@gmail.com</p>
                     </div>
                     <div className="contact-detail">
                     <img src={call_icon} alt="" /><p>+2765-607-1416</p>
