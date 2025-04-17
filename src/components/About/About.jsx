@@ -1,55 +1,85 @@
-import React from 'react'
-import './About.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
-import profile_img from '../../assets/profile_img.jpg'
-
+import React from 'react';
+import './About.css';
+import theme_pattern from '../../assets/theme_pattern.svg';
+import profile_img from '../../assets/profile_img.jpg';
 
 const About = () => {
-  return (
-    <div id='about' className='about'>
-        <div className="about-title">
-            <h1>About me</h1>
-            <img src={theme_pattern} alt="" />
-        </div>
-        <div className="about-sections">
-            <div className="about-left">
-                <img src={profile_img} alt="" />
-            </div>
-            <div className="about-right">
-                <div className="about-para">
-                    <p>I am a graduate from Walter Sisulu University with a degree in Information Technology, specializing
-                    in Software Development.</p>
-                    <p>I have acquired comprehensive knowledge
-                    and skills in the field of software development. </p>
-                </div>
-                <div className="about-skills">
-                <div className="about-skill"><p>HTML & CSS</p><hr style={{width:"70%"}} /></div>
-                <div className="about-skill"><p>React JS</p><hr style={{width:"60%"}} /></div>
-                <div className="about-skill"><p>Python</p><hr style={{width:"55%"}} /></div>
-                <div className="about-skill"><p>JavaScript</p><hr style={{width:"55%"}} /></div>
-                <div className="about-skill"><p>Java</p><hr style={{width:"60%"}} /></div>
-                <div className="about-skill"><p>C#</p><hr style={{width:"70%"}} /></div>
-            </div>
-        </div>
-        </div>
-        <div className="about-achievements">
-        <div className="about-achievement">
-            <h1>20+</h1>
-            <p>satisfied teammates</p>
-        </div>
-        <hr />
-        <div className="about-achievement">
-            <h1>10+</h1>
-            <p>Project Completed</p>
-        </div>
-        <hr/>
-        <div className="about-achievement">
-            <h1>24/7</h1>
-            <p>Working Hours</p>
-        </div>
-    </div>
-    </div>
-  )
-}
+  const skills = [
+    { name: "HTML & CSS", proficiency: 70 },
+    { name: "React JS", proficiency: 60 },
+    { name: "Python", proficiency: 55 },
+    { name: "JavaScript", proficiency: 55 },
+    { name: "Java", proficiency: 60 },
+    { name: "C#", proficiency: 70 }
+  ];
 
-export default About
+  const achievements = [
+    { count: "20+", title: "satisfied teammates" },
+    { count: "10+", title: "Projects Completed" },
+    { count: "24/7", title: "Working Hours" }
+  ];
+
+  return (
+    <section id="about" className="about">
+      <div className="container">
+        <div className="section-title about-title">
+          <h2>About me</h2>
+          <img src={theme_pattern} alt="" className="title-pattern" />
+        </div>
+
+        <div className="about-sections">
+          <div className="about-left">
+            <div className="profile-frame">
+              <img src={profile_img} alt="Andile Mnukwa" className="about-profile-img" />
+              <div className="profile-overlay"></div>
+            </div>
+          </div>
+
+          <div className="about-right">
+            <div className="about-para">
+              <p>
+                I am a graduate from Walter Sisulu University with a degree in 
+                Information Technology, specializing in Software Development.
+              </p>
+              <p>
+                I have acquired comprehensive knowledge and skills in the field of 
+                software development, focusing on creating scalable and user-friendly 
+                applications that solve real-world problems.
+              </p>
+            </div>
+
+            <div className="about-skills">
+              {skills.map((skill, index) => (
+                <div key={index} className="about-skill">
+                  <p>{skill.name}</p>
+                  <div className="skill-bar-container">
+                    <div 
+                      className="skill-bar" 
+                      style={{ width: `${skill.proficiency}%` }}
+                    >
+                      <span className="skill-percentage">{skill.proficiency}%</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="about-achievements">
+          {achievements.map((achievement, index) => (
+            <React.Fragment key={index}>
+              {index > 0 && <div className="achievement-divider"></div>}
+              <div className="about-achievement">
+                <h3 className="achievement-count gradient-text">{achievement.count}</h3>
+                <p className="achievement-title">{achievement.title}</p>
+              </div>
+            </React.Fragment>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;

@@ -1,0 +1,116 @@
+.app {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    padding-top: 80px; /* Account for fixed navbar */
+  }
+  
+  /* Preloader */
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .loader {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: #B415FF;
+    border-bottom-color: #DF8908;
+    animation: spin 1.5s linear infinite;
+    margin-bottom: 20px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .preloader h2 {
+    color: white;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+  
+  .dot-animation {
+    display: inline-block;
+    width: 30px;
+    animation: dots 1.5s infinite;
+  }
+  
+  @keyframes dots {
+    0%, 20% {
+      content: ".";
+    }
+    40% {
+      content: "..";
+    }
+    60%, 100% {
+      content: "...";
+    }
+  }
+  
+  /* Scroll to top button */
+  .scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #DF8908 0%, #B415FF 100%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 999;
+  }
+  
+  .scroll-to-top a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(180, 21, 255, 0.3);
+  }
+  
+  /* Only show scroll-to-top when user has scrolled down */
+  @media (min-width: 768px) {
+    .scroll-to-top {
+      opacity: 0;
+      visibility: visible;
+      animation: fadeIn 0.5s forwards;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
